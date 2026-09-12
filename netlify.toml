@@ -1,0 +1,35 @@
+# Le dice a Netlify cómo construir y publicar la app.
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# Para que las rutas internas no den error 404 (app de una sola página).
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# El service worker NO se cachea: así el navegador siempre ve la versión nueva.
+[[headers]]
+  for = "/sw.js"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+
+# 🤖 Robot de escalamiento: corre todos los días a las 9:00 am (hora del centro de México).
+[functions."escalar-seguimiento"]
+  schedule = "0 15 * * *"
+
+[functions."recordar-prospectos"]
+  schedule = "0 15 * * *"
+
+# 💠 Robot de compensación por la espera (avisa cuando se cumple 1 año más).
+[functions."compensacion-anual"]
+  schedule = "0 15 * * *"
+
+# 📅 Robot de recordatorio de abonos RDC (Fase 2 · Devolución Compensada).
+[functions."recordar-abono-rdc"]
+  schedule = "0 15 * * *"
+
+# ⏰ Robot de vencimiento de firma RDC: revisa cada 3 horas (plazo de 24h).
+[functions."vencer-firma-rdc"]
+  schedule = "0 */3 * * *"

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JurisConecta</title>
+    <link rel="manifest" href="/app.webmanifest" />
+    <meta name="theme-color" content="#1E50A0" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <!-- Vista previa al compartir el enlace (WhatsApp, Messenger, etc.) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="JurisConecta" />
+    <meta property="og:title" content="Únete a JurisConecta" />
+    <meta property="og:description" content="Toca para entrar. Regístrate con tu correo @diipadesarrollos.com y espera tu aprobación. Chat, llamadas y directorio del equipo en un solo lugar." />
+    <meta property="og:url" content="https://jurisconecta.netlify.app/" />
+    <meta property="og:image" content="https://jurisconecta.netlify.app/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Únete a JurisConecta" />
+    <meta name="twitter:description" content="Toca para entrar. Regístrate con tu correo @diipadesarrollos.com y espera tu aprobación." />
+    <meta name="twitter:image" content="https://jurisconecta.netlify.app/og.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function () {
+          navigator.serviceWorker.register("/sw.js").catch(function () {});
+        });
+      }
+    </script>
+  </body>
+</html>
