@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* TAMAÑO DE LETRA GLOBAL (afecta TODOS los módulos).
+       16px = normal · 17px = un poco más grande · 18px = grande.
+       Cambia SOLO este número si la quieres aún más grande o más chica. */
+    font-size: 17px;
+  }
+  body {
+    @apply bg-nube text-tinta font-sans antialiased;
+  }
+}
